@@ -1,0 +1,9 @@
+{
+    "database": {
+        "host": "localhost",
+        "user": "root",
+        "password": "student",
+        "database": "eshop_db",
+        "port": 3306
+    }
+}
