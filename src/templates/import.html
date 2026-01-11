@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Import Data</h2>
+
+<form method="POST" enctype="multipart/form-data" style="margin-top: 20px;">
+    <p>Select a file to import (CSV for Categories, JSON for Products).</p>
+    <p><em>(Demo: Clicking Import will trigger a simulated import from server-side path)</em></p>
+    <button type="submit">Import Data</button>
+</form>
+{% endblock %}

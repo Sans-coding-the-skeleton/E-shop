@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Detailed Report</h2>
+<p>Aggregated Customer Statistics (Customers -> Orders -> Items)</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Customer ID</th>
+            <th>Email</th>
+            <th>Total Orders</th>
+            <th>Total Items Purchased</th>
+            <th>Total Spent</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for info in report_data %}
+        <tr>
+            <td>{{ info.id }}</td>
+            <td>{{ info.email }}</td>
+            <td>{{ info.order_count }}</td>
+            <td>{{ info.total_items }}</td>
+            <td>{{ info.total_spent }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

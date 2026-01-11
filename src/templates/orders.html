@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Orders</h2>
+
+<form method="POST" action="/orders/create" style="margin-bottom: 20px;">
+    <button type="submit">Create Test Order (Transaction Demo)</button>
+</form>
+
+<h3>Order Summary (View)</h3>
+<table>
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Total Price</th>
+            <th>Customer</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for o in orders %}
+        <tr>
+            <td>{{ o.order_id }}</td>
+            <td>{{ o.order_date }}</td>
+            <td>{{ o.status }}</td>
+            <td>{{ o.total_price }}</td>
+            <td>{{ o.first_name }} {{ o.last_name }}</td>
+            <td>{{ o.email }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<p><a href="/report">View Aggregated Report</a></p>
+{% endblock %}

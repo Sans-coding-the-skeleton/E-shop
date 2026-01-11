@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Products</h2>
+
+<form method="POST" action="/products/add" style="margin-bottom: 20px; border: 1px solid #ccc; padding: 10px;">
+    <h3>Add Product</h3>
+    <input type="text" name="name" placeholder="Product Name" required>
+    <input type="number" step="0.01" name="price" placeholder="Price" required>
+    <button type="submit">Add Product</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Active</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in products %}
+        <tr>
+            <td>{{ p.id }}</td>
+            <td>{{ p.product_name }}</td>
+            <td>{{ p.category_name }}</td>
+            <td>{{ p.price }}</td>
+            <td>{{ p.is_active }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
